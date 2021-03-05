@@ -1,23 +1,48 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Navbar from './components/Navigation/Navigation';
+import {BrowserRouter as Router,
+Switch,
+Route,
+Link
+} from "react-router-dom";
+import Home from './components/Home/Home';
+import Categories from './components/Categories/Categories'
+import RecipeByArea from './components/RecipeByArea/RecipeByArea';
+import Navigation from './components/Navigation/Navigation';
+import {AreaProvider, CategoriesProvider, IngredientsProvider, RecipesProvider} from './ContextApi';
+import Recipes from './components/Recipes/Recipes';
+import Ingredients from './components/Ingredients/Ingredients';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Navigation/>
+        <Switch>
+          <Route exact path="/">
+            <Home/>
+          </Route>
+          <RecipesProvider>
+          <Route path="/ingredients">
+            <IngredientsProvider>
+              <Ingredients/>
+            </IngredientsProvider>
+          </Route>
+          <Route path="/area">
+            <AreaProvider>
+              <RecipeByArea/>
+            </AreaProvider>
+          </Route>
+          <Route path="/categories">
+            <CategoriesProvider>
+            <Categories/>
+            </CategoriesProvider>
+          </Route>
+          <Route path="/recipes">
+              <Recipes/>
+          </Route>
+          </RecipesProvider>
+        </Switch>
+      </Router>
     </div>
   );
 }

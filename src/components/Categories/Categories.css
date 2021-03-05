@@ -1,0 +1,16 @@
+.container-box{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+.single-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 350px;
+    background: linear-gradient(45deg, #73af13,#10912c,#73af13);
+    color: #fff;
+    /* font-size: 1.4rem; */
+}

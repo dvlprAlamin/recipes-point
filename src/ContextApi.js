@@ -19,16 +19,6 @@ export const CategoriesProvider = props => {
     );
 };
 
-export const RecipesProvider = props => {
-    const [recipes, setRecipes] = useState([]);
-    return (
-        <div>
-            <ContextApi.Provider value={[recipes, setRecipes]}>
-                {props.children}
-            </ContextApi.Provider>
-        </div>
-    )
-}
 
 export const AreaProvider = props => {
     const [area, setArea] = useState([]);

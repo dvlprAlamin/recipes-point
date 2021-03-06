@@ -9,9 +9,10 @@ import Home from './components/Home/Home';
 import Categories from './components/Categories/Categories'
 import RecipeByArea from './components/RecipeByArea/RecipeByArea';
 import Navigation from './components/Navigation/Navigation';
-import {AreaProvider, CategoriesProvider, IngredientsProvider, RecipesProvider} from './ContextApi';
+import {AreaProvider, CategoriesProvider, IngredientsProvider} from './ContextApi';
 import Recipes from './components/Recipes/Recipes';
 import Ingredients from './components/Ingredients/Ingredients';
+import { RecipesProvider } from './RecipeContext';
 function App() {
   return (
     <div>

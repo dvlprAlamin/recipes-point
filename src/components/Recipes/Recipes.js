@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import {RecipeContext} from '../../RecipeContext'
 const Recipes = () => {
     const [recipes, setRecipes] = useContext(RecipeContext)
@@ -7,10 +8,10 @@ const Recipes = () => {
         <div>
             {
                 recipes?.map(recipe => 
-                <div key={recipe.idMeal}>
+                <Link to={'/recipe/'+recipe.idMeal} key={recipe.idMeal}>
                     <img src={recipe.strMealThumb} alt=""/>
                     <h3>{recipe.strMeal}</h3>
-                </div>)
+                </Link>)
             }
         </div>
     );

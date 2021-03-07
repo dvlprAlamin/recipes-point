@@ -1,3 +1,9 @@
 .footer{
     border-top: 3px solid #fff;
 }
+.footer a{
+    color: #d57d1f;
+}
+.footer a:hover{
+    color: #d57d1f;
+}

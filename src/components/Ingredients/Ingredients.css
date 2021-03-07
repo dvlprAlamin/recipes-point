@@ -17,9 +17,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 220px;
 }
 .single-ingredient img{
-    max-width: 220px;
+    width: 100%;
 }
 .single-ingredient img:hover{
     transform: scale(1.03);

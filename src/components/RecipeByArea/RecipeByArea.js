@@ -15,10 +15,17 @@ const RecipeByArea = () => {
             console.log(area);
     }
     return (
-        <div className="container-box">
+        <div className="container-box container">
             {
                 area.map((area, idx) => (
-                    <Link to="/recipes" onClick={()=>{handleCountry(area.strArea)}} className="single-item" key={idx}><h2>{area.strArea}</h2></Link>
+                    <Link 
+                    to="/recipes" 
+                    onClick={()=>{handleCountry(area.strArea)}} 
+                    className="single-item single-country border"
+                    style={{minWidth: '300px'}} 
+                    key={idx}>
+                        <h2>{area.strArea}</h2>
+                    </Link>
                 ))
             }
             

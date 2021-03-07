@@ -3,8 +3,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    /* background: cornflowerblue; */
 }
 .random-recipe img{
     object-fit: cover;
@@ -13,4 +11,8 @@
 }
 .random-recipe h4 a{
     color: #d57d1f;
+}
+.random-recipe h4 a:hover{
+    color: #fff;
+    text-decoration: none;
 }

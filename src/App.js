@@ -43,8 +43,8 @@ function App() {
                   <SingleRecipe />
                 </Route>
                 {/* <Route path="*">
-              <NoMatch/>
-          </Route> */}
+                  <NoMatch/>
+                </Route> */}
               </RecipesProvider>
               </IngredientsProvider>
         </Switch>

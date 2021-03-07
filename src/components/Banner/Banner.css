@@ -1,9 +1,22 @@
 .banner{
     background:url('../../img/banner.png') ,
-    linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
+    linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6));
     background-blend-mode: overlay;
     background-size: cover;
     background-repeat: no-repeat;
     height: 95vh;
     width: 100%;
+}
+.banner-text{
+    height: 50%;
+}
+.banner-text h1{
+    font-size: 4rem;
+}
+.banner-text h1 span{
+    color:#d57d1f ;
+    text-shadow: 3px 3px 20px #000;
+}
+.banner-text p{
+    font-size: 1.8rem;
 }

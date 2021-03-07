@@ -1,0 +1,30 @@
+/* .single-recipe-item{
+    display: flex;
+    gap:2rem;
+} */
+/* .single-recipe-img{
+    max-width:55%;
+} */
+.single-recipe-img img{
+    max-width: 100%;
+}
+.recipe-info ul li{
+    list-style: none;
+}
+.ingredients-list li::before{
+    content: '✅';
+    margin-right: .5rem;
+}
+.ingredients-list{
+    color:#d57d1f ;
+}
+.recipe-info h3{
+    /* color:#d57d1f ; */
+    color: #ffcb69;
+}
+.recipe-info span{
+    color: #d57d1f;
+}
+.ingredients-measure{
+    gap:1rem;
+}

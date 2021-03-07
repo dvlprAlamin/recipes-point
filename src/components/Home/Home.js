@@ -1,14 +1,16 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
+import PopularIngredients from '../PopularIngredients/PopularIngredients';
 import RandomIngredients from '../RandomIngredients/RandomIngredients';
-import RandomRecipes from '../RandomRecipes/RandomRecipes';
+import RandomRecipe from '../RandomRecipe/RandomRecipe';
 
 const Home = () => {
     return (
         <>
             <Banner />
-            <RandomRecipes />
-            {/* <RandomIngredients/> */}
+            <PopularIngredients />
+            <RandomRecipe/>
+            <RandomIngredients/>
         </>
     );
 };

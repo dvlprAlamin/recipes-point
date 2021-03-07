@@ -6,3 +6,13 @@
     background: #000;
     padding: 1rem;
 } */
+#menu{
+    background: #23180D !important;
+    padding: .5rem 10%;
+}
+.logo{
+    color: #fff !important;
+}
+#menu ul li a{
+    color: #fff;
+}

@@ -7,7 +7,6 @@ export const RecipeContext = createContext();
 
 export const RecipesProvider = props => {
     const [recipes, setRecipes] = useState([]);
-   console.log(recipes);
     return (
         <div>
             <RecipeContext.Provider value={[recipes, setRecipes]}>

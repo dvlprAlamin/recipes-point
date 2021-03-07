@@ -1,0 +1,16 @@
+.random-recipe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* background: cornflowerblue; */
+}
+.random-recipe img{
+    object-fit: cover;
+    height: 70vh;
+    width: 100%;
+}
+.random-recipe h4 a{
+    color: #d57d1f;
+}

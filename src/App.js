@@ -1,11 +1,5 @@
 import './App.css';
-import Navbar from './components/Navigation/Navigation';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import {BrowserRouter as Router,  Switch,  Route} from "react-router-dom";
 import Home from './components/Home/Home';
 import Categories from './components/Categories/Categories'
 import RecipeByArea from './components/RecipeByArea/RecipeByArea';
@@ -16,14 +10,15 @@ import Ingredients from './components/Ingredients/Ingredients';
 import { RecipesProvider } from './RecipeContext'
 import NoMatch from './components/NoMatch/NoMatch';
 import SingleRecipe from './components/SingleRecipe/SingleRecipe';
+import Footer from './components/Footer/Footer';
 function App() {
   return (
     <div>
       <Router>
         <Navigation />
         <Switch>
-          <IngredientsProvider>
             <AreaProvider>
+              <IngredientsProvider>
               <Route exact path="/">
                 <Home />
               </Route>
@@ -49,9 +44,10 @@ function App() {
               <NoMatch/>
           </Route> */}
               </RecipesProvider>
+              </IngredientsProvider>
             </AreaProvider>
-          </IngredientsProvider>
         </Switch>
+        <Footer />
       </Router>
     </div>
   );

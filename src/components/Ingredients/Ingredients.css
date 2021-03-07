@@ -1,0 +1,26 @@
+.ingredients-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 1rem;
+    row-gap: 3rem;
+}
+.ingredients-container a{
+    text-decoration: none;
+    color: #d57d1f;
+}
+.ingredients-container a:hover{
+    color: #d57d1f;
+}
+.single-ingredient{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.single-ingredient img{
+    max-width: 220px;
+}
+.single-ingredient img:hover{
+    transform: scale(1.03);
+    transition: .3s linear;
+}

@@ -20,10 +20,12 @@ const Categories = () => {
         <div className="container-box">
             {
                 categories.map((category, idx) => (
+                    <div>
                     <Link to="/recipes" onClick={()=> handleCategory(category.strCategory)} className="single-item" key={idx}>
                         <img src={category.strCategoryThumb} alt=""/>
                         <h2>{category.strCategory}</h2>
                     </Link>
+                    </div>
                 ))
             }
             

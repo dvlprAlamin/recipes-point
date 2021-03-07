@@ -17,7 +17,7 @@ function App() {
       <Router>
         <Navigation />
         <Switch>
-            <AreaProvider>
+            
               <IngredientsProvider>
               <Route exact path="/">
                 <Home />
@@ -26,8 +26,10 @@ function App() {
                 <Route path="/ingredients">
                   <Ingredients />
                 </Route>
-                <Route path="/area">
+                <Route path="/nations">
+                <AreaProvider>
                   <RecipeByArea />
+                </AreaProvider>
                 </Route>
                 <Route path="/categories">
                   <CategoriesProvider>
@@ -45,7 +47,6 @@ function App() {
           </Route> */}
               </RecipesProvider>
               </IngredientsProvider>
-            </AreaProvider>
         </Switch>
         <Footer />
       </Router>

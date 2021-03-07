@@ -9,7 +9,8 @@
     color: #d57d1f;
 }
 .ingredients-container a:hover{
-    color: #d57d1f;
+    color: #fff;
+    text-decoration: none;
 }
 .single-ingredient{
     display: flex;

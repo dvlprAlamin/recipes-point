@@ -19,7 +19,7 @@ const Navigation = () => {
                             <Link className="nav-link" to="/categories">Categories</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/area">Recipe by Nation</Link>
+                            <Link className="nav-link" to="/nations">Recipe by Nation</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/ingredients">Ingredients</Link>

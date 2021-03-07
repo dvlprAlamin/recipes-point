@@ -10,9 +10,9 @@ const RecipeByArea = () => {
             .then(res => res.json())
             .then(data => {
                 setRecipes(data.meals)
-                console.log(data.meals)
+                // console.log(data.meals)
             })
-            
+            console.log(area);
     }
     return (
         <div className="container-box">

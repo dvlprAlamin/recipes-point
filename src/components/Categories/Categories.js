@@ -9,23 +9,20 @@ const Categories = () => {
     const handleCategory = categoryName => {
             fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c='+categoryName)
             .then(res => res.json())
-            .then(data => {
-                setRecipes(data.meals)
-                console.log(data.meals)
-            })
-            
+            .then(data => setRecipes(data.meals))
     }
-    console.log(useContext(ContextApi));
     return (
-        <div className="container-box">
+        <div className="container-box container">
             {
                 categories.map((category, idx) => (
-                    <div>
-                    <Link to="/recipes" onClick={()=> handleCategory(category.strCategory)} className="single-item" key={idx}>
+                    <Link 
+                    to="/recipes" 
+                    onClick={()=> handleCategory(category.strCategory)} 
+                    className="single-item"
+                    key={idx}>
                         <img src={category.strCategoryThumb} alt=""/>
                         <h2>{category.strCategory}</h2>
                     </Link>
-                    </div>
                 ))
             }
             

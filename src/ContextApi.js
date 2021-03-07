@@ -27,6 +27,7 @@ export const AreaProvider = props => {
         .then(res => res.json())
         .then(data => setArea(data.meals))
     },[]);
+    console.log(area);
     return (
         <div>
             <ContextApi.Provider value={[area, setArea]}>

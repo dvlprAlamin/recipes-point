@@ -1,14 +1,26 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import {RecipeContext} from '../../RecipeContext'
 import './Recipes.css'
 const Recipes = () => {
-    const [recipes, setRecipes] = useContext(RecipeContext)
+    // const [recipes, setRecipes] = useContext(RecipeContext)
+    const {by, name} = useParams();
+    const [recipes, setRecipes] = useState([]);
+    let byValue = '';
+    by === 'category' && (byValue = 'c') 
+    by === 'nation' && (byValue = 'a') 
+    by === 'ingredient' && (byValue = 'i')
+    useEffect(()=> {
+        const url = `https://www.themealdb.com/api/json/v1/1/filter.php?${byValue}=${name}`
+        fetch(url)
+        .then(res => res.json())
+        .then(data => setRecipes(data.meals || {}))
+    },[])
     console.log(recipes);
     return (
         <div className="container-box container">
             {
-                recipes?.map(recipe => 
+                recipes.map(recipe => 
                 <Link 
                 to={'/recipe/'+recipe.idMeal} 
                 key={recipe.idMeal}

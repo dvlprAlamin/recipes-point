@@ -25,11 +25,11 @@ const SingleRecipe = () => {
     const measure = measureArray.filter(item => item);
     return (
         <div className="container single-recipe-item">
-            <div className="row my-4">
-                <div className="single-recipe-img col-lg-7 col-md-12">
+            <div className="row">
+                <div className="single-recipe-img col-lg-7 col-md-12 my-3">
                     <img src={strMealThumb} alt="" />
                 </div>
-                <div className="recipe-info col-lg-5  col-md-12">
+                <div className="recipe-info col-lg-5 col-md-12 my-2">
                     <h1 className="text-white">{strMeal}</h1>
                     <p className="text-white">|<span> Category:</span> {strCategory} | <span> Nation: </span> {strArea} |</p>
                     <h3>Ingredients:</h3>

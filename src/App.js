@@ -39,6 +39,9 @@ function App() {
                 <Route path="/recipes">
                   <Recipes />
                 </Route>
+                <Route path="/:by/:name/recipes">
+                  <Recipes />
+                </Route>
                 <Route path="/recipe/:id">
                   <SingleRecipe />
                 </Route>

@@ -11,7 +11,9 @@ const PopularIngredients = () => {
         <div className="ingredients-container py-5">
         {
             popularIngredients.map(ingredient => (
-                <Link to="/recipes" className="single-ingredient" key={ingredient.idIngredient}>
+                <Link 
+                to={`ingredient/${ingredient.strIngredient}/recipes`}
+                className="single-ingredient" key={ingredient.idIngredient}>
                     <img 
                     src={`https://www.themealdb.com/images/ingredients/${ingredient.strIngredient}.png`} 
                     alt={ingredient.strIngredient}/>

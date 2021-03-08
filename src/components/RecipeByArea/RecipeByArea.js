@@ -1,11 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ContextApi } from '../../ContextApi'
 
 const RecipeByArea = () => {
-    const [area] = useContext(ContextApi);
+    const [area, setArea] = useState([]);
+    useEffect(() => {
+        fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list')
+            .then(res => res.json())
+            .then(data => setArea(data.meals))
+    }, []);
     return (
-        <div className="container-box container">
+        <div className="container" style={{minHeight:'calc(100vh - 180px)'}}>
+            <div className="container-box">
             {
                 area.map((area, idx) => (
                     <Link
@@ -18,6 +23,7 @@ const RecipeByArea = () => {
                 ))
             }
 
+        </div>
         </div>
     );
 };

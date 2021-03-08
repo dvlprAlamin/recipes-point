@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link, useParams } from 'react-router-dom';
 import './Recipes.css'
+import 'react-lazy-load-image-component/src/effects/blur.css';
 const Recipes = () => {
     const { by, name } = useParams();
     const [recipes, setRecipes] = useState([]);
@@ -23,7 +25,8 @@ const Recipes = () => {
                         to={'/recipe/' + recipe.idMeal}
                         key={recipe.idMeal}
                         className="recipe-single">
-                        <img src={recipe.strMealThumb} alt="" />
+                        <LazyLoadImage src={recipe.strMealThumb} effect="blur" alt="" />
+                        {/* <img/> */}
                         <h6>{recipe.strMeal}</h6>
                     </Link>)
             }

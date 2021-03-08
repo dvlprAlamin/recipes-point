@@ -1,11 +1,16 @@
-import React, { useContext } from 'react';
-import { ContextApi } from '../../ContextApi'
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Categories = () => {
-    const [categories] = useContext(ContextApi)
+    const [categories, setCategories] = useState([]);
+    useEffect(() => {
+        fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
+            .then(res => res.json())
+            .then(data => setCategories(data.categories))
+    }, []);
     return (
-        <div className="container-box container">
+        <div className="container" style={{minHeight:'calc(100vh - 180px)'}}>
+             <div className="container-box">
             {
                 categories.map((category, idx) => (
                     <Link
@@ -18,6 +23,7 @@ const Categories = () => {
                 ))
             }
 
+        </div>
         </div>
     );
 };

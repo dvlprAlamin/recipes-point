@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter as Router,  Switch,  Route} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './components/Home/Home';
 import Categories from './components/Categories/Categories'
 import RecipeByArea from './components/RecipeByArea/RecipeByArea';
@@ -16,41 +16,18 @@ function App() {
     <div>
       <Router>
         <Navigation />
-        <Switch>
-            
-              <IngredientsProvider>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <RecipesProvider>
-                <Route path="/ingredients">
-                  <Ingredients />
-                </Route>
-                <Route path="/nations">
-                <AreaProvider>
-                  <RecipeByArea />
-                </AreaProvider>
-                </Route>
-                <Route path="/categories">
-                  <CategoriesProvider>
-                    <Categories />
-                  </CategoriesProvider>
-                </Route>
-                <Route path="/recipes">
-                  <Recipes />
-                </Route>
-                <Route path="/:by/:name/recipes">
-                  <Recipes />
-                </Route>
-                <Route path="/recipe/:id">
-                  <SingleRecipe />
-                </Route>
-                {/* <Route path="*">
-                  <NoMatch/>
-                </Route> */}
-              </RecipesProvider>
-              </IngredientsProvider>
-        </Switch>
+        <IngredientsProvider>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/ingredients" component={Ingredients} />
+            <Route exact path="/nations" component={RecipeByArea} />
+            <Route exact path="/categories" component={Categories} />
+            <Route exact path="/recipes" component={Recipes} />
+            <Route exact path="/:by/:name/recipes" component={Recipes} />
+            <Route exact path="/recipe/:id" component={SingleRecipe} />
+            <Route path="*" component={NoMatch} />
+          </Switch>
+        </IngredientsProvider>
         <Footer />
       </Router>
     </div>

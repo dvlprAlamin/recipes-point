@@ -1,34 +1,23 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import {ContextApi} from '../../ContextApi'
-import {RecipeContext} from '../../RecipeContext'
+import { ContextApi } from '../../ContextApi'
+
 const RecipeByArea = () => {
-    const [area, setArea] = useContext(ContextApi)
-    // const [recipes, setRecipes] = useContext(RecipeContext)
-    // const handleCountry = countryName => {
-    //         fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a='+ countryName)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setRecipes(data.meals)
-    //             // console.log(data.meals)
-    //         })
-    //         console.log(area);
-    // }
+    const [area] = useContext(ContextApi);
     return (
         <div className="container-box container">
             {
                 area.map((area, idx) => (
-                    <Link 
-                    to={`nation/${area.strArea}/recipes`}
-                    // onClick={()=>{handleCountry(area.strArea)}} 
-                    className="single-item single-country border"
-                    style={{minWidth: '300px'}} 
-                    key={idx}>
+                    <Link
+                        to={`nation/${area.strArea}/recipes`}
+                        className="single-item single-country border"
+                        style={{ minWidth: '300px' }}
+                        key={idx}>
                         <h2>{area.strArea}</h2>
                     </Link>
                 ))
             }
-            
+
         </div>
     );
 };

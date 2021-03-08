@@ -1,38 +1,38 @@
-.banner{
-    background:url('../../img/banner.png') ,
-    linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6));
-    background-blend-mode: overlay;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 95vh;
-    width: 100%;
+.banner {
+  background: url("../../img/banner.png"),
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6));
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 95vh;
+  width: 100%;
 }
-.banner-text{
-    height: 50%;
+.banner-text {
+  height: 50%;
 }
-.banner-text h1{
-    font-size: 4rem;
+.banner-text h1 {
+  font-size: 4rem;
 }
-.banner-text h1 span{
-    color:#d57d1f ;
-    text-shadow: 3px 3px 20px #000;
+.banner-text h1 span {
+  color: #d57d1f;
+  text-shadow: 3px 3px 20px #000;
 }
-.banner-text p{
-    font-size: 1.8rem;
+.banner-text p {
+  font-size: 1.8rem;
 }
-@media (max-width:768px){
-    .banner-text h1{
-        font-size: 3rem;
-    }
-    .banner-text p{
-        font-size: 1.4rem;
-    }
+@media (max-width: 768px) {
+  .banner-text h1 {
+    font-size: 3rem;
+  }
+  .banner-text p {
+    font-size: 1.4rem;
+  }
 }
-@media (max-width:576px){
-    .banner-text h1{
-        font-size: 2rem;
-    }
-    .banner-text p{
-        font-size: 1rem;
-    }
+@media (max-width: 576px) {
+  .banner-text h1 {
+    font-size: 2rem;
+  }
+  .banner-text p {
+    font-size: 1rem;
+  }
 }

@@ -1,18 +1,18 @@
-.random-recipe{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.random-recipe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.random-recipe img{
-    object-fit: cover;
-    height: 70vh;
-    width: 100%;
+.random-recipe img {
+  object-fit: cover;
+  height: 70vh;
+  width: 100%;
 }
-.random-recipe h4 a{
-    color: #d57d1f;
+.random-recipe h4 a {
+  color: #d57d1f;
 }
-.random-recipe h4 a:hover{
-    color: #fff;
-    text-decoration: none;
+.random-recipe h4 a:hover {
+  color: #fff;
+  text-decoration: none;
 }

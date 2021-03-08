@@ -1,14 +1,19 @@
-#menu{
-    background: #23180D !important;
-    padding: .5rem 10%;
+#menu {
+  background: #23180d !important;
+  padding: 0.5rem 10%;
 }
-.logo{
-    color: #fff !important;
+.logo {
+  color: #fff !important;
 }
-#menu ul li a{
-    color: #fff;
+#menu ul li a {
+  color: #fff;
 }
-#menu ul li a:hover{
-    color:#d57d1f ;
-    transition: .3s linear;
+#menu ul li a:hover {
+  color: #d57d1f;
+  transition: 0.3s linear;
+}
+@media (max-width: 992px) {
+  .logo {
+    margin-top: 20px;
+  }
 }

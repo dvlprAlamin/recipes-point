@@ -51,7 +51,7 @@ const SingleRecipe = () => {
                 <h2 className="section-title text-center">Instruction</h2>
                 <p className="text-white">{strInstructions}</p>
             </div>
-            {youtubeEmbed && <VideoTutorial youtubeEmbed={youtubeEmbed}/>}
+            {youtubeEmbed && <VideoTutorial youtubeEmbed={youtubeEmbed} />}
         </div>
     );
 };

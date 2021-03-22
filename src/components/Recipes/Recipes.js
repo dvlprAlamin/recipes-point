@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link, useParams } from 'react-router-dom';
+import Loader from '../Loader/Loader';
 import './Recipes.css'
-import 'react-lazy-load-image-component/src/effects/blur.css';
 const Recipes = () => {
     const { by, name } = useParams();
     const [recipes, setRecipes] = useState([]);
+    const [loading, setLoading] = useState(true);
     let byValue = '';
     by === 'category' && (byValue = 'c')
     by === 'nation' && (byValue = 'a')
@@ -14,23 +14,26 @@ const Recipes = () => {
         const url = `https://www.themealdb.com/api/json/v1/1/filter.php?${byValue}=${name}`
         fetch(url)
             .then(res => res.json())
-            .then(data => setRecipes(data.meals || {}))
-    }, [])
+            .then(data => {
+                setRecipes(data.meals);
+                setLoading(false);
+            })
+    }, [byValue, name])
     return (
         <div className="page-min-height">
             <div className="container-box container">
-            {
-                recipes.map(recipe =>
-                    <Link
-                        to={'/recipe/' + recipe.idMeal}
-                        key={recipe.idMeal}
-                        className="recipe-single">
-                        <LazyLoadImage src={recipe.strMealThumb} effect="blur" alt="" />
-                        {/* <img/> */}
-                        <h6>{recipe.strMeal}</h6>
-                    </Link>)
-            }
-        </div>
+                {
+                    loading ? <Loader/>:
+                    recipes.map(recipe =>
+                        <Link
+                            to={'/recipe/' + recipe.idMeal}
+                            key={recipe.idMeal}
+                            className="recipe-single">
+                            <img src={recipe.strMealThumb} alt="" />
+                            <h6>{recipe.strMeal}</h6>
+                        </Link>)
+                }
+            </div>
         </div>
     );
 };

@@ -1,0 +1,14 @@
+.search-container{
+    position: relative;
+}
+.available-result{
+    position: absolute;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: #2D2013;
+    border-radius:0 0 15px 15px;
+}
+

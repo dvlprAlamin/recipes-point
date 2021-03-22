@@ -1,7 +1,6 @@
-/* .single-recipe-item{
-    display: flex;
-    gap:2rem;
-} */
+.single-recipe-item{
+    min-height: calc(100vh - 150px);
+}
 /* .single-recipe-img{
     max-width:55%;
 } */

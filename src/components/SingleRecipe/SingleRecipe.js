@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import Loader from '../Loader/Loader';
 import VideoTutorial from '../VideoTutorial/VideoTutorial';
 import './SingleRecipe.css'
 const SingleRecipe = () => {
     const [recipe, setRecipe] = useState({})
+    const [loading, setLoading] = useState(true)
     const { id } = useParams()
     useEffect(() => {
         fetch('https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + id)
             .then(res => res.json())
-            .then(data => setRecipe(data.meals[0]))
-    }, [])
+            .then(data => {
+                setRecipe(data.meals[0]);
+                setLoading(false);
+            })
+    }, [id])
     console.log(recipe);
     const { strMealThumb, strMeal, strArea, strCategory, strInstructions, strYoutube } = recipe || {}
     const youtubeEmbed = strYoutube?.replace('watch?v=', 'embed/') || '';
@@ -25,6 +30,9 @@ const SingleRecipe = () => {
     const measure = measureArray.filter(item => item);
     return (
         <div className="container single-recipe-item">
+            {
+            loading? <Loader /> :
+            <>
             <div className="row">
                 <div className="single-recipe-img col-lg-7 col-md-12 my-3">
                     <img src={strMealThumb} alt="" />
@@ -52,6 +60,7 @@ const SingleRecipe = () => {
                 <p className="text-white">{strInstructions}</p>
             </div>
             {youtubeEmbed && <VideoTutorial youtubeEmbed={youtubeEmbed} />}
+            </>}
         </div>
     );
 };

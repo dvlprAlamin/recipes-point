@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../img/logo-small.png'
 import React from 'react';
 import './Navigation.css'
+import SearchField from '../SearchField/SearchField';
 
 const Navigation = () => {
     return (
@@ -12,7 +13,8 @@ const Navigation = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <Link className="navbar-brand logo" to="/"><img src={logo} alt="" /> Recipes Point</Link>
-                    <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
+                    
+                    <ul className="navbar-nav ml-auto mb-2 mb-lg-0" style={{minWidth:400}}>
                         <li className="nav-item">
                             <Link className="nav-link" to="/">Home</Link>
                         </li>
@@ -26,6 +28,7 @@ const Navigation = () => {
                             <Link className="nav-link" to="/ingredients">Ingredients</Link>
                         </li>
                     </ul>
+                    <SearchField/>
                 </div>
             </div>
         </nav>

@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React  from 'react';
 import { Link } from 'react-router-dom';
-import { ContextApi } from '../../ContextApi'
+import { GetContext } from '../../ContextApi'
 
 const PopularIngredients = () => {
-    const [ingredients] = useContext(ContextApi)
+    const {ingredients} = GetContext()
     const popularIngredients = ingredients.slice(0, 8) || {};
     return (
         <div className="container mt-5">

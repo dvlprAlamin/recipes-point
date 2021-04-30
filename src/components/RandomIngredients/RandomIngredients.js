@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { ContextApi } from '../../ContextApi'
+import { GetContext } from '../../ContextApi'
 
 const RandomIngredients = () => {
-    const [ingredients] = useContext(ContextApi)
+    const {ingredients} = GetContext()
     const random = Math.floor(Math.random() * 100);
     let randomIngredients = []
     for (let i = random; i <= random + 440; i += 40) {

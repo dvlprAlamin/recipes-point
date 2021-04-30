@@ -1,19 +1,21 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { ContextApi } from '../../ContextApi'
+import { GetContext } from '../../ContextApi'
+import Loader from '../Loader/Loader';
 import './Ingredients.css'
 const Ingredients = () => {
-    const [ingredients] = useContext(ContextApi)
+    const { ingredients } = GetContext()
     return (
         <div className="ingredients-container container">
             {
-                ingredients.map((ingredient, idx) => (
-                    <Link to={`ingredient/${ingredient.strIngredient}/recipes`}
-                        className="single-ingredient" key={idx}>
-                        <img src={`https://www.themealdb.com/images/ingredients/${ingredient.strIngredient}.png`} alt="" />
-                        <h5>{ingredient.strIngredient}</h5>
-                    </Link>
-                ))
+                ingredients.length === 0 ? <Loader /> :
+                    ingredients.map((ingredient, idx) => (
+                        <Link to={`ingredient/${ingredient.strIngredient}/recipes`}
+                            className="single-ingredient" key={idx}>
+                            <img src={`https://www.themealdb.com/images/ingredients/${ingredient.strIngredient}.png`} alt="" />
+                            <h5>{ingredient.strIngredient}</h5>
+                        </Link>
+                    ))
             }
 
         </div>
